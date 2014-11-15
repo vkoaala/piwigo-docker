@@ -14,5 +14,5 @@ Recommended use:
     # Lauch the piwigo container
     docker run -d --volumes-from piwigo-data --link mysql-piwigo:mysql -p 80:80 hg8496/piwigo
 
-Then go to to http://<server> and you should see the piwigo installpage. From there use 'mysql' as database host and 'piwigo' as user, password and database.
+Then go to to `http://<server>` and you should see the piwigo installpage. From there use `mysql` as database host and `piwigo` as `user`, `password` and `database`.
 
