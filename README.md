@@ -2,6 +2,7 @@ docker-piwigo
 =============
 
 A docker container for Piwigo
+Now contains ffmpeg and mediainfo
 
 Recommended use:
 
