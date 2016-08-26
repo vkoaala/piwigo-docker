@@ -3,7 +3,7 @@ FROM hg8496/apache
 MAINTAINER hg8496@cstolz.de
 
 RUN apt-get update && \
-    apt-get install -y php5-mysql php5-gd imagemagick wget unzip mediainfo ffmpeg && \
+    apt-get install -y php7.0-mysql php7.0-gd imagemagick wget unzip mediainfo ffmpeg && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     wget -q -O piwigo.zip http://piwigo.org/download/dlcounter.php?code=latest && \
