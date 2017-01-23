@@ -1,6 +1,18 @@
-FROM hg8496/apache
+FROM ubuntu:16.04
 
 MAINTAINER hg8496@cstolz.de
+
+ENV HOME /root
+
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-get update \
+    && apt-get dist-upgrade -y \
+    && apt-get install apache2 libapache2-mod-php7.0 -y 
+	
+ADD apache.sh /apache.sh
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_SERVER_NAME **NONE**
 
 RUN apt-get update && \
     apt-get install -y php7.0-mysql php7.0-gd imagemagick wget unzip mediainfo ffmpeg && \
@@ -15,3 +27,5 @@ RUN apt-get update && \
 
 VOLUME ["/var/www/html/galleries", "/var/www/html/themes", "/var/www/html/plugins", "/var/www/html/local"]
 
+EXPOSE 80
+CMD ["/apache.sh"]
