@@ -18,7 +18,7 @@ RUN apt-get update && \
     apt-get install -y php7.0-mysql php7.0-gd imagemagick wget unzip mediainfo ffmpeg && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    wget -q -O piwigo.zip http://piwigo.org/download/dlcounter.php?code=latest && \
+    wget -q -O piwigo.zip http://piwigo.org/download/dlcounter.php?code=2.9.0beta1 && \
     unzip piwigo.zip && \
     mv piwigo/* /var/www/html && \
     chown -R www-data:www-data /var/www/html && \
